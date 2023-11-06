@@ -1,7 +1,7 @@
 let NUM_OF_PARTICLES = 18; // Decide the initial number of particles.
 
 let particles = [];
-let snowpiles1 = 0;
+let snowpiles = 0;
 let thick = 40
 
 function setup() {
@@ -23,7 +23,7 @@ function draw() {
     p.display();
   }
 
- if (snowpiles1 >= 10) {
+ if (snowpiles >= 10) {
     noStroke();
     ellipse(0, height, 1300, thick);
     noStroke();
@@ -32,7 +32,7 @@ function draw() {
     ellipse(550, height, 400, thick);
   }
 
-  if (snowpiles1 >= 20) {
+  if (snowpiles >= 20) {
     noStroke();
     ellipse(0, height, 1300, thick + 100);
     noStroke();
@@ -40,26 +40,26 @@ function draw() {
     noStroke();
     ellipse(550, height, 400, thick + 100);
   }
-    if (snowpiles1 >= 30) {
+    if (snowpiles >= 30) {
     fill(255)
     noStroke();
     ellipse(100, 500, 100, 100);
     noStroke();
     }
-    if (snowpiles1 >= 40) {
+    if (snowpiles >= 40) {
     ellipse(100, 430, 80, 80);
     noStroke();
-    if (snowpiles1 >= 45) {
+    if (snowpiles >= 45) {
     fill(0)
     ellipse(80, 430, 15, 15);
     fill(255)
     }
-    if (snowpiles1 >= 46) {
+    if (snowpiles >= 46) {
     fill(0)
     ellipse(110, 430, 15, 15);
     fill(255)
     }
-    if (snowpiles1 >= 47) {
+    if (snowpiles >= 47) {
     fill("orange")
     triangle(100,450,100,440,50,445)
     fill(255)
@@ -79,7 +79,7 @@ class Particle {
     this.y += this.speed;
 
     if (this.y > height) {
-      snowpiles1 += 0.5;
+      snowpiles += 0.5;
       this.y = 0;
     }
   }
